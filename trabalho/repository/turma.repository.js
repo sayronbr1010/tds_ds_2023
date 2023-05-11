@@ -17,9 +17,10 @@ module.exports = {
         return con("turmas").update(turma).where({ id: id });
     },
     capeta:()=>{
-        return con.select('turmas.NRO_SALA', 'turmas.ID')
-                .from('turmas')
-                .innerjoin('alunos', 'turmas.id', '=', 'alunos.turmas_id')
-                .innerjoin('professores', 'turmas.id', '=', 'professor.turmas_id')
+        return con
+        .select('T.NRO_SALA', 'A.NOME AS ALUNO','P.NOME AS PROFESSOR')
+        .from('TURMAS AS T')
+        .innerjoin('ALUNOS AS A', 'T.ALUNO_ID','A.ID') 
+        .innerjoin('PROFESSOR AS P', 'T.PROFESSORES_ID','P.ID')
     }
 }
