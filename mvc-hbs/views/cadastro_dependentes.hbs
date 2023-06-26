@@ -1,0 +1,49 @@
+<h1 class="display-4">Cadastro de dependentes</h1>
+
+
+<form class="form-group" method="POST" action="/funcionarios/dependentes">
+
+    <input type="hidden" id="id" name="id" value="{{data.ID}}">
+
+    <div class="form-group">
+        <label for="nome">Nome completo</label>
+        <input type="text" class="form-control" placeholder="Nome completo" id="nome" name="nome" value="{{data.nome}}"
+            required>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="telefone">Telefone</label>
+            <input type="text" class="form-control" placeholder="(00) 0 0000-0000" id="telefone" name="telefone"
+                maxlength="11" oninput="formataTELEFONE()" value="{{data.Telefone}}" required>
+        </div>
+        <div class="form-group col-md-2">
+            <label>funcionarios</label>
+            <input type="text" class="form-control" placeholder="94" id="ID" name="ID" value="{{data.ID}}" required>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    ID's
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        {{#each data}}
+                            <td class="dropdown-item" href="#">{{ID}} - {{NOME}} <br></td>
+                        {{/each}}
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <button type="submit" class="btn btn-primary btn-lg btn-block">
+        Salvar
+    </button>
+    <a class="btn btn-info btn-lg btn-block" href="/dependentes">Voltar</a>
+</form>
+
+<script>
+    function formataTELEFONE() {
+        let inputTELEFONE = document.getElementById("telefone").value;
+        document.getElementById("telefone").value = inputTELEFONE.replace(/[^\d]/g, "").replace(/(\d{2})(\d{1})(\d{4})(\d{4})/, "($1) $2 $3-$4");
+    }
+</script>
