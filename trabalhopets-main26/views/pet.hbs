@@ -1,0 +1,43 @@
+<style>
+  
+    #asa{
+        background-color: #a13887;
+        border: #a13887;
+    }
+</style>
+<body>
+<h1>Pet</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">nome</th>
+            <th scope="col">idade</th>
+            <th scope="col">raça</th>
+            <th scope="col">peso</th>
+            <th scope="col">porte</th>
+            <th scope="col">  </th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each data}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{nome}}</td>
+            <td>{{idade}}</td>
+            <td>{{raca}}</td>
+            <td>{{peso}}</td>
+            <td>{{porte}}</td>
+            <td >
+                <a href="/petwise/pet/{{dono_id}}"  class="btn btn-primary" id="asa" role="button">
+                <span class="material-icons">add</span>
+                </a>
+            </td>
+           
+        </tr>
+        {{/each}}
+
+    </tbody>
+</table>
+</body>

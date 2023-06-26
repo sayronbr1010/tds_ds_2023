@@ -1,0 +1,51 @@
+<h1>dono</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">id do dono</th>
+            <th scope="col">nome do dono</th>
+            <th scope="col">cpf do dono</th>
+            <th scope="col">telefone do dono</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each senta}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{nome_donos}}</td>
+            <td>{{formataCPF cpf}}</td>
+            <td>{{formataTelefone telefone}}</td>
+            {{!-- formataTelefone --}}
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+<h1>Pet</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">nome</th>
+            <th scope="col">idade</th>
+            <th scope="col">raça</th>
+            <th scope="col">peso</th>
+            <th scope="col">porte</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each ne_mim}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{nome}}</td>
+            <td>{{idade}}</td>
+            <td>{{raca}}</td>
+            <td>{{peso}}</td>
+            <td>{{porte}}</td>
+        </tr>
+        {{/each}}
+
+    </tbody>
+</table>

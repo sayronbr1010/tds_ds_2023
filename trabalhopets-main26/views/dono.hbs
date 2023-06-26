@@ -1,0 +1,37 @@
+<style>
+  
+    #asa{
+        background-color: #a13887;
+        border: #a13887;
+    }
+</style>
+<h1>dono</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">id do dono</th>
+            <th scope="col">nome do dono</th>
+            <th scope="col">cpf do dono</th>
+            <th scope="col">telefone do dono</th>
+            <th scope="col">email do dono</th>
+            <th scope="col"> </th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each data}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{nome_donos}}</td>
+            <td>{{formataCPF cpf}}</td>
+            <td>{{formataTelefone telefone}}</td>
+            <td>{{email}}</td>
+            <td >
+                <a href="/petwise/dono/{{id}}"  class="btn btn-primary" id="asa" role="button">
+                <span class="material-icons">add</span>
+                </a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
